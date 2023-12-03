@@ -4,15 +4,10 @@ theme: /
 
     state: Start
         q!: $regex</start>
-        a: Начнём.
-
-    state: Hello
-        intent!: /привет
-        a: Привет привет
-
-    state: Bye
-        intent!: /пока
-        a: Пока пока
+        a: Добрый день! Я бот-помощник. Чем я могу помочь?
+        buttons:
+            {text: "Заказать бота", url: "https://example.com"}
+            {text: "Наш сайт", url: "https://example.com"}
 
     state: NoMatch
         event!: noMatch
@@ -21,3 +16,11 @@ theme: /
     state: Match
         event!: match
         a: {{$context.intent.answer}}
+
+    state: Information request
+        InputText: 
+            prompt = Расскажите нам, какого бота Вы хотели бы заказать. Обязательно оставьте свои контактные данные.
+            varName = order
+            html = 
+            htmlEnabled = false
+            actions = {}

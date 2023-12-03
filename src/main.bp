@@ -1,0 +1,20 @@
+{
+  "positions" : [ {
+    "id" : "/Start",
+    "x" : 290,
+    "y" : 673
+  }, {
+    "id" : "/NoMatch",
+    "x" : 290,
+    "y" : 1911
+  }, {
+    "id" : "/Match",
+    "x" : 290,
+    "y" : 2223
+  }, {
+    "id" : "/Information request",
+    "name" : "Information request",
+    "x" : 661,
+    "y" : 1006
+  } ]
+}
