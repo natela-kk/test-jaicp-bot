@@ -1,4 +1,4 @@
-name: zb-cailapub
+name: zb-jgraph-cailapub
 
 entryPoint: main.sc
 
@@ -10,7 +10,7 @@ tests:
     - test.xml
 
 sts:
-    noMatchThreshold: 0.2
+  noMatchThreshold: 0.2
 
 caila:
-    noMatchThreshold: 0.2
+  noMatchThreshold: 0.2

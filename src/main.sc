@@ -2,60 +2,47 @@ require: slotfilling/slotFilling.sc
   module = sys.zb-common
 theme: /
 
-    state: Start
+    state: Start || sessionResult = "Сценарий начинается отсюда", sessionResultColor = "#143AD1"
         q!: $regex</start>
-        a: Привет!Я твой диджей! || html = "Привет!Я твой диджей!", htmlEnabled = true
-        image: https://st.depositphotos.com/1026550/4167/i/450/depositphotos_41679805-stock-photo-dj-silhouette.jpg
-        go!: /Выбрать музыку
+        image: https://248305.selcdn.ru/zfl_prod/64069/64072/Y6nDSc64tgJWac7N.png
+        a: Добрый день! Я виртуальный секретарь компании Искра. Я могу рассказать о времени работы офиса и уточнить статус заказа. Также вы можете оставить мне обратную связь о работе нашей компании || htmlEnabled = true, html = "Добрый день! Я виртуальный секретарь компании&nbsp;<b>Искра</b>. Я могу рассказать о времени работы офиса и уточнить статус заказа. Также вы можете оставить мне обратную связь о работе нашей компании"
+        buttons:
+            "Часы работы" -> /Часы работы
+            "Оставить отзыв" -> /Отзыв о работе
+        intent: /Оставить отзыв || onlyThisState = false, toState = "/Отзыв о работе"
+        intent: /Часы работы || onlyThisState = false, toState = "/Часы работы"
 
-    state: Hello
-        intent!: /привет
-        random: 
-            a: Здравствуй, мой друг! || htmlEnabled = false, html = "Здравствуй, мой друг!"
-            a: Приветики! || htmlEnabled = false, html = "Приветики!"
-            a: Хаюшки! || htmlEnabled = false, html = "Хаюшки!"
-
-    state: Bye
-        intent!: /пока
-        a: Рад был пообщаться! || html = "Рад был пообщаться!"
-        random: 
-            a: Пока пока! || htmlEnabled = false, html = "Пока пока!"
-            a: Еще увидимся! || htmlEnabled = false, html = "Еще увидимся!"
-            a: Приходи еще! || htmlEnabled = false, html = "Приходи еще!"
-
-    state: NoMatch
+    state: NoMatch || sessionResult = "Тут обрабатываем непонятные запросы", sessionResultColor = "#3E8080"
         event!: noMatch
-        random: 
-            a: Хм, кажется я не понимаю тебя || htmlEnabled = false, html = "Хм, кажется я не понимаю тебя"
-            a: Непонятный запросик || htmlEnabled = false, html = "Непонятный запросик"
-            a: Давай попробуем еще раз || htmlEnabled = false, html = "Давай попробуем еще раз"
+        a: Простите, я вас не поняла. Не могли бы вы уточнить вопрос? || html = "Простите, я вас не поняла. Не могли бы вы уточнить вопрос?"
+        go!: /Меню
 
-    state: Выбрать музыку
-        intent!: /Трек
-        random: 
-            a: Выбирай какой трек ты хочешь послушать || htmlEnabled = false, html = "Выбирай какой трек ты хочешь послушать"
-            a: Готов играть твою любимую музыку || htmlEnabled = false, html = "Готов играть твою любимую музыку"
-            a: Есть идеи, что хочется полушать сегодня? || htmlEnabled = false, html = "Есть идеи, что хочется полушать сегодня?"
-        buttons:
-            "Jazz " -> /Jaz
-            "Rock" -> /Rock
-            "Pop" -> /NewState_8
-        intent: /Трек || onlyThisState = false, toState = "./"
+    state: Часы работы || sessionResult = "Отвечаем про часы работы", sessionResultColor = "#15952F"
+        a: Мы работаем с 10 утра до 8 вечера по будням и с 11 до 17 в субботу. Воскресенье — выходной. || htmlEnabled = false, html = "Мы работаем с 10 утра до 8 вечера по будням и с 11 до 17 в субботу. Воскресенье — выходной."
+        go!: /Меню
 
-    state: Rock
-        audio: https://248305.selcdn.ru/zfl_prod/251178517/251178516/audio/undad7cMU6hhHjO7.mp3?channels={"incompatible":["OUTGOING_CALLS","ALEXA","GOOGLE_ASSISTANCE"],"compatible":["FACEBOOK","WHATSAPP","AIMYBOX","TELEGRAM","ALISA","VK"]} || name = "bon-jovi-its-my-life.mp3"
+    state: Отзыв о работе || sessionResult = "Отзыв о работе", sessionResultColor = "#7E47D1"
+        a: Пожалуйста, оцените нашу работу. || htmlEnabled = false, html = "Мы будем благодарны услышать ваш отзыв о работе."
         buttons:
-            "Еще музыки?" -> /Выбрать музыку
-            "Закончим веселье?" -> /Bye
+            "Все отлично, спасибо большое" -> /Оценка Отлично
+            "Вам есть что улучшить" -> /Уточнение причины
+            "Все очень плохо" -> /Уточнение причины
+        intent: /Отличная оценка || onlyThisState = false, toState = "/Оценка Отлично"
+        intent: /Плохая оценка || onlyThisState = false, toState = "/Уточнение причины"
+        intent: /Средняя оценка || onlyThisState = false, toState = "/Уточнение причины"
 
-    state: NewState_8
-        audio: https://248305.selcdn.ru/zfl_prod/251178517/251178516/audio/EavfpfJE3xq44T8Q.mp3?channels={"incompatible":["OUTGOING_CALLS","ALEXA","GOOGLE_ASSISTANCE"],"compatible":["FACEBOOK","WHATSAPP","AIMYBOX","TELEGRAM","ALISA","VK"]} || name = "Малиновая лада.mp3"
-        buttons:
-            "Еще музыки?" -> /Выбрать музыку
-            "Закончим веселье?" -> /Bye
+    state: Оценка Отлично || sessionResult = "Отзыв о работе", sessionResultColor = "#7524AA"
+        a: Спасибо за обратную связь! Мы рады работать для вас
+        go!: /Меню
 
-    state: Jaz
-        audio: https://ringtonazer.b-cdn.net/fetch/8b/8beeaf93be017984a27e70d9c2de6154.mp3 || name = "8beeaf93be017984a27e70d9c2de6154.mp3"
+    state: Уточнение причины || sessionResult = "Отзыв о работе", sessionResultColor = "#7524AA"
+        a: Мне очень жаль, что мы вас расстроили :( В следующий раз будем стараться лучше.
+        go!: /Меню
+
+    state: Меню
+        a: Я могу чем-нибудь еще вам помочь? || htmlEnabled = false, html = "Я могу чем-нибудь еще вам помочь?"
         buttons:
-            "Еще музыки" -> /Выбрать музыку
-            "Закончим веселье?" -> /Bye
+            "Оставить отзыв" -> /Отзыв о работе
+            "Часы работы" -> /Часы работы
+        intent: /Оставить отзыв || onlyThisState = false, toState = "/Отзыв о работе"
+        intent: /Часы работы || onlyThisState = false, toState = "/Часы работы"

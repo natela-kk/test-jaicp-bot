@@ -1,7 +1,7 @@
 {
   "project" : {
-    "id" : "domashka_19082022-251178517-FJa",
-    "name" : "domashka_19082022-251178517-FJa",
+    "id" : "j_graph_obuchenie_mo-64069-lDi",
+    "name" : "j_graph_obuchenie_mo-64069-lDi",
     "folder" : "/jaicp"
   },
   "settings" : {
@@ -11,56 +11,104 @@
     "timezone" : "UTC",
     "extendedSettings" : {
       "tokenizerEngine" : "mystem",
-      "useShared" : false
+      "useShared" : true,
+      "zflPatternsEnabled" : true
     },
     "shared" : false
   },
   "intents" : [ {
-    "id" : 11910680,
-    "path" : "/пока",
+    "id" : 13103478,
+    "path" : "/Часы работы",
     "enabled" : true,
     "shared" : false,
     "phrases" : [ {
-      "text" : "пока"
+      "text" : "как вы работаете?"
+    }, {
+      "text" : "когда открыт офис?"
+    }, {
+      "text" : "работаете в субботу?"
     } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
     "priority" : 0
   }, {
-    "id" : 11910681,
-    "path" : "/привет",
+    "id" : 13103479,
+    "path" : "/Оставить отзыв",
     "enabled" : true,
     "shared" : false,
     "phrases" : [ {
-      "text" : "привет"
+      "text" : "хочу оставить отзыв"
+    }, {
+      "text" : "расскажу все про вашу компанию"
+    }, {
+      "text" : "хочу пожаловаться"
+    }, {
+      "text" : "выразить благодарность"
     } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
     "priority" : 0
   }, {
-    "id" : 11910682,
-    "path" : "/Трек",
+    "id" : 13103480,
+    "path" : "/Отличная оценка",
     "enabled" : true,
     "shared" : false,
     "phrases" : [ {
-      "text" : "музыку"
+      "text" : "пять баллов"
     }, {
-      "text" : "трек"
+      "text" : "все замечательно"
     }, {
-      "text" : "песню"
+      "text" : "спасибо большое"
     }, {
-      "text" : "песня"
-    }, {
-      "text" : "музыка"
-    }, {
-      "text" : "мелодия"
-    }, {
-      "text" : "Song"
-    }, {
-      "text" : "track "
-    }, {
-      "text" : "подбери мне"
-    }, {
-      "text" : "выбери мне"
-    }, {
-      "text" : "подскажи"
+      "text" : "вы супер"
     } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "id" : 13103481,
+    "path" : "/Средняя оценка",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "удовлетворительно"
+    }, {
+      "text" : "мне не понравилось"
+    }, {
+      "text" : "могло бы быть оперативнее"
+    }, {
+      "text" : "могло бы быть лучше"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "id" : 13103482,
+    "path" : "/Плохая оценка",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "отвратительно"
+    }, {
+      "text" : "я разочарован"
+    }, {
+      "text" : "никогда больше не буду пользоваться вашими услугами"
+    }, {
+      "text" : "все плохо"
+    }, {
+      "text" : "нахамили"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
     "patterns" : [ ],
     "priority" : 0
   } ],
