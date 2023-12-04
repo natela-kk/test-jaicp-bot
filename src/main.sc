@@ -6,12 +6,12 @@ theme: /
         q!: $regex</start>
         a: Добрый день! Я бот-помощник. Чем я могу помочь?
         buttons:
-            {text: "Заказать бота", url: "https://example.com"}
+            "Заказать бота" -> /Information request
             {text: "Наш сайт", url: "https://example.com"}
 
     state: NoMatch
         event!: noMatch
-        a: Я не понял. Вы сказали: {{$request.query}}
+        a: Извините, я Вас не понял. Перефразируйте, пожалуйста.
 
     state: Match
         event!: match
@@ -24,3 +24,7 @@ theme: /
             html = 
             htmlEnabled = false
             actions = {}
+            then = /Order confirmation
+
+    state: Order confirmation || sessionResult = "Заявка создана", sessionResultColor = "#15952F"
+        a: Ваша заявка: «{{$session.order}}». Спасибо за информацию! Менеджер свяжется с Вами в ближайшее время.

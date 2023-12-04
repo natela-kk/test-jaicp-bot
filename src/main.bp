@@ -1,20 +1,25 @@
 {
   "positions" : [ {
     "id" : "/Start",
-    "x" : 290,
-    "y" : 673
+    "x" : 301,
+    "y" : 664
   }, {
     "id" : "/NoMatch",
-    "x" : 290,
-    "y" : 1911
+    "x" : 648,
+    "y" : 954
   }, {
     "id" : "/Match",
-    "x" : 290,
-    "y" : 2223
+    "x" : 965,
+    "y" : 956
   }, {
     "id" : "/Information request",
     "name" : "Information request",
-    "x" : 661,
-    "y" : 1006
+    "x" : 645,
+    "y" : 606
+  }, {
+    "id" : "/Order confirmation",
+    "name" : "Order confirmation",
+    "x" : 988,
+    "y" : 561
   } ]
 }
