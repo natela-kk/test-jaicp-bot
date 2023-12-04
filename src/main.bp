@@ -1,25 +1,44 @@
 {
   "positions" : [ {
     "id" : "/Start",
-    "x" : 301,
-    "y" : 664
+    "x" : -124,
+    "y" : -432
+  }, {
+    "id" : "/Hello",
+    "x" : 2324,
+    "y" : -367
+  }, {
+    "id" : "/Bye",
+    "x" : 340,
+    "y" : 1621
   }, {
     "id" : "/NoMatch",
-    "x" : 648,
-    "y" : 954
+    "x" : 1955,
+    "y" : -373
   }, {
-    "id" : "/Match",
-    "x" : 965,
-    "y" : 956
+    "id" : "/Выбрать музыку",
+    "name" : "Выбрать музыку",
+    "x" : 1059,
+    "y" : 18
   }, {
-    "id" : "/Information request",
-    "name" : "Information request",
-    "x" : 645,
-    "y" : 606
+    "id" : "/Jazz ",
+    "name" : "Jazz ",
+    "x" : 1804,
+    "y" : 493
   }, {
-    "id" : "/Order confirmation",
-    "name" : "Order confirmation",
-    "x" : 988,
-    "y" : 561
+    "id" : "/Rock",
+    "name" : "Rock",
+    "x" : 640,
+    "y" : 771
+  }, {
+    "id" : "/NewState_8",
+    "name" : "NewState_8",
+    "x" : 1616,
+    "y" : 1273
+  }, {
+    "id" : "/Jaz",
+    "name" : "Jaz",
+    "x" : 2478,
+    "y" : 1067
   } ]
 }

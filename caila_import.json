@@ -1,47 +1,67 @@
 {
   "project" : {
-    "id" : "test_bot-1000115757-GCs",
-    "name" : "test_bot-1000115757-GCs",
-    "folder" : "/platform"
+    "id" : "domashka_19082022-251178517-FJa",
+    "name" : "domashka_19082022-251178517-FJa",
+    "folder" : "/jaicp"
   },
   "settings" : {
     "language" : "ru",
     "spellingCorrection" : false,
     "classificationAlgorithm" : "sts",
-    "timezone" : "Europe/Moscow",
+    "timezone" : "UTC",
     "extendedSettings" : {
       "tokenizerEngine" : "mystem",
       "useShared" : false
     },
-    "shared" : false,
-    "validation" : {
-      "phraseValidationEnabled" : true,
-      "answerValidationEnabled" : true,
-      "phraseValidationThreshold" : 0.5,
-      "answerValidationThreshold" : 0.8
-    }
+    "shared" : false
   },
   "intents" : [ {
+    "id" : 11910680,
     "path" : "/пока",
     "enabled" : true,
     "shared" : false,
     "phrases" : [ {
       "text" : "пока"
     } ],
-    "classificationRules" : {
-      "refs" : [ ]
-    },
     "priority" : 0
   }, {
+    "id" : 11910681,
     "path" : "/привет",
     "enabled" : true,
     "shared" : false,
     "phrases" : [ {
       "text" : "привет"
     } ],
-    "classificationRules" : {
-      "refs" : [ ]
-    },
+    "priority" : 0
+  }, {
+    "id" : 11910682,
+    "path" : "/Трек",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "музыку"
+    }, {
+      "text" : "трек"
+    }, {
+      "text" : "песню"
+    }, {
+      "text" : "песня"
+    }, {
+      "text" : "музыка"
+    }, {
+      "text" : "мелодия"
+    }, {
+      "text" : "Song"
+    }, {
+      "text" : "track "
+    }, {
+      "text" : "подбери мне"
+    }, {
+      "text" : "выбери мне"
+    }, {
+      "text" : "подскажи"
+    } ],
+    "patterns" : [ ],
     "priority" : 0
   } ],
   "entities" : [ ],
@@ -149,7 +169,5 @@
   }, {
     "name" : "zb.number",
     "enabled" : false
-  } ],
-  "faq" : [ ],
-  "skills" : [ ]
+  } ]
 }

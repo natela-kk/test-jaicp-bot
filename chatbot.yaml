@@ -9,7 +9,8 @@ tests:
   include:
     - test.xml
 
-nlp:
-  intentNoMatchThresholds:
-    phrases: 0.2
-    patterns: 0.2
+sts:
+    noMatchThreshold: 0.2
+
+caila:
+    noMatchThreshold: 0.2
