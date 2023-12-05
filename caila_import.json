@@ -1,8 +1,8 @@
 {
   "project" : {
-    "id" : "j_graph_obuchenie_mo-64069-lDi",
-    "name" : "j_graph_obuchenie_mo-64069-lDi",
-    "folder" : "/jaicp"
+    "id" : "test_bot-1000115757-GCs",
+    "name" : "test_bot-1000115757-GCs",
+    "folder" : "/platform"
   },
   "settings" : {
     "language" : "ru",
@@ -14,10 +14,15 @@
       "useShared" : true,
       "zflPatternsEnabled" : true
     },
-    "shared" : false
+    "shared" : false,
+    "validation" : {
+      "phraseValidationEnabled" : false,
+      "answerValidationEnabled" : false,
+      "phraseValidationThreshold" : 0.5,
+      "answerValidationThreshold" : 0.8
+    }
   },
   "intents" : [ {
-    "id" : 13103478,
     "path" : "/Часы работы",
     "enabled" : true,
     "shared" : false,
@@ -34,7 +39,6 @@
     "patterns" : [ ],
     "priority" : 0
   }, {
-    "id" : 13103479,
     "path" : "/Оставить отзыв",
     "enabled" : true,
     "shared" : false,
@@ -53,11 +57,12 @@
     "patterns" : [ ],
     "priority" : 0
   }, {
-    "id" : 13103480,
     "path" : "/Отличная оценка",
     "enabled" : true,
     "shared" : false,
     "phrases" : [ {
+      "text" : "*хорош*"
+    }, {
       "text" : "пять баллов"
     }, {
       "text" : "все замечательно"
@@ -72,7 +77,6 @@
     "patterns" : [ ],
     "priority" : 0
   }, {
-    "id" : 13103481,
     "path" : "/Средняя оценка",
     "enabled" : true,
     "shared" : false,
@@ -91,7 +95,6 @@
     "patterns" : [ ],
     "priority" : 0
   }, {
-    "id" : 13103482,
     "path" : "/Плохая оценка",
     "enabled" : true,
     "shared" : false,
@@ -217,5 +220,7 @@
   }, {
     "name" : "zb.number",
     "enabled" : false
-  } ]
+  } ],
+  "faq" : [ ],
+  "skills" : [ ]
 }
